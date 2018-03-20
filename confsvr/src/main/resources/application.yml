@@ -1,0 +1,29 @@
+server:
+  port: 8888
+  
+spring:
+  application:
+    name: confsvr
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:///E:/workspace/bbbp/confsvr/src/main/resources/config/bbbpcollectionservice,
+                            file:///E:/workspace/bbbp/confsvr/src/main/resources/config/bbbpdashboardservice,
+                            file:///E:/workspace/bbbp/confsvr/src/main/resources/config/bbbpweb,
+                            file:///E:/workspace/bbbp/confsvr/src/main/resources/config/zuulgateway
+        encrypt:
+          enabled: false
+          
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+      
+      

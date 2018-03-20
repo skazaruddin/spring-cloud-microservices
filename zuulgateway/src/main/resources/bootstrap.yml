@@ -1,0 +1,16 @@
+#This configuration is used by this service to fetch properties from Spring cloud configuration server.
+#Here we specified the application ID as 'zuulgateway' and the profile as 'dev' to fetch configuration of dev environment.Note:
+# This can be passed as startup parameter in command line, if we run our application from commandline.
+#And finally we provide the Spring Cloud Configuration Server URI and port.
+spring:
+  application:
+    name: zuulgateway
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+      
+      
+      
+    

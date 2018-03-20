@@ -1,0 +1,49 @@
+security:
+  sessions: NEVER
+server:
+  port: 8092
+  address: localhost
+spring:
+  session:
+    store-type: redis
+  cache:
+    ehcache:
+      config: classpath:ehcache.xml
+  redis:
+   host: localhost
+   password: "{cipher}02c58011d022ab9267a7814f213efb0aa36c149b29c5a585c0c4fa1b5d7b916f"
+   port: 6379
+  jpa: 
+    properties: 
+     hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        ddl-auto: update
+  datasource: 
+    username: postgres
+    password: admin
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://192.168.1.36:5432/microservice
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 5
+      connection-init-sql: SELECT 1
+      auto-commit: false
+      idle-timeout: 0
+      pool-name: bbbpPool
+  
+   
+logging:
+  level:
+    org.springframework.security: INFO
+    org.hibernate: INFO
+    com.zaxxer.hikari: INFO
+    org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
+#https://github.com/brettwooldridge/HikariCP
+# HikariCP settings (one of the fastest production ready connection pool)
+#For production environment,please set spring.datasource.hikari.maximum-pool-size=120 to 120 connections.
+#spring.datasource.hikari.connection-timeout is 60000 = 1 minute , request will wait to take connection from pool,else sql exception will be thrown.
+
+
+
+    

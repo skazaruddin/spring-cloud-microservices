@@ -1,0 +1,15 @@
+security:
+  sessions: NEVER
+ 
+server:
+  port: 8091
+spring:
+  session:
+    store-type: redis
+  redis:
+   host: localhost
+   password: "{cipher}02c58011d022ab9267a7814f213efb0aa36c149b29c5a585c0c4fa1b5d7b916f"
+   port: 6379
+logging:
+  level:
+    org.springframework.security: DEBUG

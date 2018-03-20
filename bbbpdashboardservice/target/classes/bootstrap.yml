@@ -1,0 +1,12 @@
+
+spring:
+  application:
+    name: bbbpdashboardservice
+  profiles:
+    active: dev
+  cloud:
+    config:
+      uri: http://localhost:8888
+    client:
+      hostname: localhost
+      ipAddress: 127.0.0.1

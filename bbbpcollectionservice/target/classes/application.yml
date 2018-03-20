@@ -1,0 +1,28 @@
+#This configuration is used to register this service with Eureka Server. 
+spring:
+  application:
+    name: bbbpcollectionservice
+  profiles:
+      active: dev
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
+    config:
+      enabled: true
+    inetutils:
+      useOnlySiteLocalInterfaces: true
+
+eureka:
+  instance:
+    preferIpAddress: false
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#    healthcheck:
+#      enabled: true
+#    lease:
+#      duration: 5

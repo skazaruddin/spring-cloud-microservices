@@ -1,0 +1,21 @@
+#Default port is 8761
+server:
+  port: 8761
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+#COMMENT THIS waitTimeInMsWhenSyncEmpty IN PRODUCTION/DEPLOYMENT.ONLY TO BE UNCOMMENTED WHEN RUNNING LOCALLY
+    waitTimeInMsWhenSyncEmpty: 30
+  serviceUrl:
+    defaultZone: http://localhost:8761
+    
+
+#Setting logging levels
+logging:
+  level:
+    com.netflix: WARN
+    org.springframework.web: WARN
+    com.thoughtmechanix: DEBUG
